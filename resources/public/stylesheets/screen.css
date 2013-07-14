@@ -31,7 +31,7 @@ ul {
   margin-left: .2em;
 }
 
-li:before {
+div.right li:before {
   content: "-";
 }
 

@@ -6,5 +6,9 @@
 (defn index []
   (view/index))
 
+(defn about []
+  (view/about))
+
 (defroutes routes
-  (GET  "/" [] (index)))
+  (GET  "/" [] (index))
+  (GET  "/about" [] (about)))
