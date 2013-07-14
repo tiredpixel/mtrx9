@@ -1,1 +1,1 @@
-web: lein run -m mtrx9.core $PORT
+web: lein trampoline run -m mtrx9.core $PORT
