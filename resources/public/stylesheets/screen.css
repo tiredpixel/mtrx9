@@ -27,10 +27,6 @@ li {
   letter-spacing: .4em;
 }
 
-ul {
-  margin-left: .2em;
-}
-
 div.right li:before {
   content: "-";
 }
