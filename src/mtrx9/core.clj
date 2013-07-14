@@ -2,12 +2,13 @@
   (:use compojure.core)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
-            [ring.adapter.jetty :as jetty]))
+            [ring.adapter.jetty :as jetty]
+            [mtrx9.controllers.statics :as statics]
+            [mtrx9.views.layout :as layout]))
 
 (defroutes app-routes
-  (GET "/" [] "MTRX9")
-  (route/resources "/")
-  (route/not-found "Not Found"))
+  statics/routes
+  (route/resources "/"))
 
 (def app
   (handler/site app-routes))
