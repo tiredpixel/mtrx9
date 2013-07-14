@@ -1,6 +1,7 @@
 (ns mtrx9.views.layout
   (:use [hiccup.core :only (html)]
-        [hiccup.page :only (html5 include-css include-js)]))
+        [hiccup.page :only (html5 include-css include-js)])
+  (:require [mtrx9.views.shared :as shared]))
 
 (defn common [title & body]
   (html5
@@ -17,3 +18,10 @@
     [:div {:id "content" :class "container"} body]
     (include-js "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
     (include-js "/javascripts/application.js")]))
+
+(defn sidebar-right [title right]
+  (common title [:div
+    [:div {:class "pane pane-50 left"}
+      (shared/sidebar)]
+    [:div {:class "pane pane-50 right"}
+      right]]))
