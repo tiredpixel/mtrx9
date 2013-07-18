@@ -12,18 +12,21 @@ h1 {
 }
 
 p,
-li {
+li,
+form input {
   font-size: 1.5em;
   line-height: 1em;
 }
 
-p {
+p,
+form {
   margin-top: 1em;
 }
 
 h1,
 p,
-li {
+li,
+form input {
   letter-spacing: .4em;
 }
 
@@ -31,17 +34,22 @@ div.right li:before {
   content: "-";
 }
 
-a {
+a,
+form input {
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 a:link,
-a:visited {
+a:visited,
+form input {
   text-decoration: none;
   color: #80FF80;
+  font-family: inherit;
 }
 
-a:hover {
+a:hover,
+form input:hover {
   text-decoration: none;
   color: #BFFFBF;
 }
@@ -54,9 +62,17 @@ a.right:hover:before {
   content: ">";
 }
 
-a:active {
+a:active,
+form input:active {
   text-decoration: none;
   color: #80FF80;
+}
+
+form input {
+  background: none !important;
+  border: none; 
+  padding: 0 !important;
+  margin: 0;
 }
 
 div.container#header {
