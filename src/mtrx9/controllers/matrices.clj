@@ -11,5 +11,5 @@
                       (apply str (repeatedly 42 #(rand-nth "0123456789-SLATF"))))))
 
 (defroutes routes
-  (GET  "/matrices/:id" [id] (show id))
+  (GET  ["/matrices/:id" :id #"[0-9-SLATF]{42}"] [id] (show id))
   (POST "/matrices" [] (create)))
