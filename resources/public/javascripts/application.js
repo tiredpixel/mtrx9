@@ -21,12 +21,12 @@ $(document).ready(function () {
     socket.onmessage = function (e) {
       var data = $.parseJSON(e.data);
       
-      if (data.chars) {
-        $.each(data.chars, function (k, v) {
+      if (data.streams) {
+        $.each(data.streams, function (k, v) {
           var streamId,
             streamTailPrev,
             streamTail,
-            streamItems;
+            streamChars;
           
           streamId  = 'stream-' + k.charCodeAt(0);
           
@@ -44,11 +44,11 @@ $(document).ready(function () {
             streamTail.appendTo($('#' + streamId));
           }
           
-          streamItems = $('#' + streamId + ' tbody tr');
+          streamChars = $('#' + streamId + ' tbody tr');
           
-          if (streamTail[0] === streamItems.last()[0] &&
+          if (streamTail[0] === streamChars.last()[0] &&
               $('#' + streamId).height() > $(window).height()) {
-            streamItems.first().replaceWith(streamTail);
+            streamChars.first().replaceWith(streamTail);
           } else {
             streamTail.next().remove();
           }

@@ -24,9 +24,9 @@
 (defn create []
   (ring/redirect (str "/matrices/" (rand-matrix-id))))
 
-(defn update [id chars]
-  (println "U:" id chars)
-  (enqueue (named-channel id nil) (encode-json->string {:chars chars}))
+(defn update [id streams]
+  (println "U:" id streams)
+  (enqueue (named-channel id nil) (encode-json->string {:streams streams}))
   {:status 204})
 
 (defroutes routes
@@ -34,7 +34,7 @@
     (wrap-aleph-handler websocket-handler))
   (GET ["/matrices/:id" :id id-re] [id]
     (show id))
-  (POST ["/matrices/:id" :id id-re] [id chars]
-    (update id chars))
+  (POST ["/matrices/:id" :id id-re] [id streams]
+    (update id streams))
   (POST "/matrices" []
     (create)))
