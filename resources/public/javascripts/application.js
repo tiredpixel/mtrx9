@@ -22,6 +22,8 @@ $(document).ready(function () {
       var data = $.parseJSON(e.data);
       
       if (data.streams) {
+        $('.placeholder').hide();
+        
         $.each(data.streams, function (k, v) {
           var streamId,
             streamTailPrev,

@@ -104,13 +104,16 @@ div.left {
   text-align: right;
 }
 
+div.placeholder {
+  margin: 1em;
+}
+
 div#matrix-id {
   display: none;
 }
 
 div#matrix {
-  margin-top: 1em;
-  margin-left: 1em;
+  margin: 1em;
 }
 
 div#matrix table {
