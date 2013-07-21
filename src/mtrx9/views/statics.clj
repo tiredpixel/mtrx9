@@ -3,7 +3,7 @@
         [hiccup.form :only (form-to submit-button)])
   (:require [mtrx9.views.layout :as layout]))
 
-(defn index []
+(defn home []
   (layout/sidebar-right "MTRX9"
     [:div
       [:h1 "MTRX9"]

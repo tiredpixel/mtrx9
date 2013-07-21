@@ -3,12 +3,14 @@
   (:require [ring.util.response :as ring]
             [mtrx9.views.statics :as view]))
 
-(defn index []
-  (view/index))
+(defn home []
+  (view/home))
 
 (defn about []
   (view/about))
 
 (defroutes routes
-  (GET  "/" [] (index))
-  (GET  "/about" [] (about)))
+  (GET "/" []
+    (home))
+  (GET "/about" []
+    (about)))
