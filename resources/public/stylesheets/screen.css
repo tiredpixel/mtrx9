@@ -14,7 +14,7 @@ h1 {
 p,
 li,
 form input,
-dl {
+table {
   font-size: 1.5em;
   line-height: 1em;
 }
@@ -28,7 +28,7 @@ h1,
 p,
 li,
 form input,
-dl {
+table {
   letter-spacing: .4em;
 }
 
@@ -77,10 +77,6 @@ form input {
   margin: 0;
 }
 
-div.container#header {
-  height: 100px;
-}
-
 div.pane-50 {
   width: 50%;
   float: left;
@@ -91,6 +87,11 @@ div.pane > * {
   padding-right: .5em;
 }
 
+div.pane.left,
+div.pane.right {
+  margin-top: 100px;
+}
+
 div.pane.right p {
   max-width: 18em;
 }
@@ -99,18 +100,19 @@ div.left {
   text-align: right;
 }
 
-div.right {
-}
-
 div#matrix-id {
   display: none;
 }
 
-div#matrix dl dt,
-div#matrix dl dd {
-  display: inline-block;
+div#matrix {
+  margin-top: 1em;
+  margin-left: 1em;
 }
 
-div#matrix dl dt {
+div#matrix table {
+  float: left;
+}
+
+div#matrix table th {
   color: #FFFFFF;
 }

@@ -5,5 +5,4 @@
   (layout/common "MTRX9"
     [:div {:id "matrix-id"} id]
     [:div
-      [:div {:id "matrix"}
-        [:dl]]]))
+      [:div {:id "matrix"}]]))

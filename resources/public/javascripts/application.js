@@ -1,7 +1,7 @@
 $(document).ready(function() {
-  $('h1, p, li, form input, dl').hide(0, function() {
+  $('h1, p, li, form input, table').hide(0, function() {
     $('h1').fadeIn(1000);
-    $('p, li, form input, dl').fadeIn(1500);
+    $('p, li, form input, table').fadeIn(1500);
   });
   
   if ($('#matrix-id').length > 0) {
@@ -15,14 +15,12 @@ $(document).ready(function() {
       if (data.chars) {
         $.each(data.chars, function(k, v) {
             var streamId  = 'stream-' + k.charCodeAt(0);
-            var streamIdK = streamId + '-k';
-            var streamIdV = streamId + '-v';
             
-            if ($('#' + streamIdK).length === 0) {
-              $('#matrix dl').append("<dt id='" + streamIdK + "'>" + k.charAt(0) + "</dt><dd id='" + streamIdV + "'></dd>");
+            if ($('#' + streamId).length === 0) {
+              $('#matrix').append("<table id='" + streamId + "'><tr><th>" + k.charAt(0) + "</th></tr></table>");
             }
             
-            $('#' + streamIdV).append("<span>" + v.charAt(0) + "</span>");
+            $('#' + streamId).append("<tr><td>" + v.charAt(0) + "</td></tr>");
         });
       }
     };
