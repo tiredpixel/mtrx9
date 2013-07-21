@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  var matrixSettings = {
+    id    : $('#matrix-id').text(),
+    decay : 60000
+  };
+  
   $('h1, p, li, form input, table').hide(0, function() {
     $('h1').fadeIn(1000);
     $('p, li, form input, table').fadeIn(1500);
@@ -20,7 +25,7 @@ $(document).ready(function() {
               $('#matrix').append("<table id='" + streamId + "'><tr><th>" + k.charAt(0) + "</th></tr></table>");
             }
             
-            $('#' + streamId).append("<tr><td>" + v.charAt(0) + "</td></tr>");
+            $("<tr><td>" + v.charAt(0) + "</td></tr>").appendTo($('#' + streamId)).fadeTo(matrixSettings.decay, 0.3);
         });
       }
     };
