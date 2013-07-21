@@ -29,7 +29,7 @@
 
 (defn update [id chars]
   (println "U:" id chars)
-  (enqueue (named-channel id websocket-init) (encode-json->string chars))
+  (enqueue (named-channel id websocket-init) (encode-json->string {:chars chars}))
   {:status 204})
 
 (defroutes routes
