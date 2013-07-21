@@ -3,7 +3,10 @@
 
 (defn show [id]
   (layout/common "MTRX9"
-    [:div {:id "matrix-id" :class "settings"} id]
+    [:div {:id "matrix-id" :class "settings"}]
+    [:div {:id "header" :class "container"}
+      [:p {:class "title"} [:a {:href "/"} "MTRX9"]]
+      [:p {:class "copyright"} [:a {:href "http://www.tiredpixel.com"} "tiredpixel"]]]
     [:div {:class "placeholder"}
       [:h1 "Ready"]
       [:p "POST data to this matrix:"]
