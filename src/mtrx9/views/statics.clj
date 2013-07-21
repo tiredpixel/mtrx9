@@ -1,6 +1,5 @@
 (ns mtrx9.views.statics
-  (:use [hiccup.core :only (h)]
-        [hiccup.form :only (form-to submit-button)])
+  (:use [hiccup.form :only (form-to submit-button)])
   (:require [mtrx9.views.layout :as layout]))
 
 (defn home []

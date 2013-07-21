@@ -1,6 +1,5 @@
 (ns mtrx9.views.layout
-  (:use [hiccup.core :only (html)]
-        [hiccup.page :only (html5 include-css include-js)])
+  (:use [hiccup.page :only (html5 include-css include-js)])
   (:require [mtrx9.views.shared :as shared]))
 
 (defn common [title & body]

@@ -1,5 +1,4 @@
-(ns mtrx9.views.shared
-  (:use [hiccup.core :only (h)]))
+(ns mtrx9.views.shared)
 
 (defn sidebar []
   [:div

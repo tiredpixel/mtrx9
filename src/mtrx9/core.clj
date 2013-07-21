@@ -1,13 +1,10 @@
 (ns mtrx9.core
-  (:use compojure.core
-        lamina.core
-        aleph.http)
+  (:use [compojure.core :only (defroutes)]
+        [aleph.http :only (start-http-server wrap-ring-handler)])
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
-            [ring.adapter.jetty :as jetty]
             [mtrx9.controllers.statics :as statics]
-            [mtrx9.controllers.matrices :as matrices]
-            [mtrx9.views.layout :as layout]))
+            [mtrx9.controllers.matrices :as matrices]))
 
 (defroutes app-routes
   statics/routes

@@ -1,8 +1,8 @@
 (ns mtrx9.controllers.matrices
   (:use [compojure.core :only (defroutes GET POST)]
-        lamina.core
-        aleph.http
-        aleph.formats)
+        [lamina.core :only (named-channel receive-all siphon enqueue)]
+        [aleph.http :only (wrap-aleph-handler)]
+        [aleph.formats :only (encode-json->string)])
   (:require [ring.util.response :as ring]
             [mtrx9.views.matrices :as view]))
 
