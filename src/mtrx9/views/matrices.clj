@@ -3,5 +3,7 @@
 
 (defn show [id]
   (layout/common "MTRX9"
+    [:div {:id "matrix-id"} id]
     [:div
-      [:h1 id]]))
+      [:div {:id "matrix"}
+        [:dl]]]))
