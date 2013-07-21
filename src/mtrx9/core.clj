@@ -1,5 +1,7 @@
 (ns mtrx9.core
-  (:use compojure.core)
+  (:use compojure.core
+        lamina.core
+        aleph.http)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
             [ring.adapter.jetty :as jetty]
@@ -12,8 +14,6 @@
   matrices/routes
   (route/resources "/"))
 
-(def app
-  (handler/api app-routes))
-
 (defn -main [port]
-  (jetty/run-jetty app {:port (Integer. port) :join? false}))
+  (start-http-server (wrap-ring-handler (handler/api app-routes))
+    {:port (Integer. port) :websocket true}))
