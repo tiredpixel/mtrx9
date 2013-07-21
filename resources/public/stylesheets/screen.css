@@ -1,0 +1,144 @@
+html, body {
+  font-family: 'AverageMono', monospace;
+  background-color: #000000;
+  color: #00FF00;
+}
+
+.clear {
+  clear: both;
+}
+
+h1 {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin-bottom: 1em;
+  color: #FFFFFF;
+}
+
+p,
+li,
+form input,
+table {
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+p,
+form {
+  margin-top: 1em;
+}
+
+h1,
+p,
+li,
+form input,
+table {
+  letter-spacing: .4em;
+}
+
+div.right li:before {
+  content: "-";
+}
+
+a,
+form input {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+a:link,
+a:visited,
+form input {
+  text-decoration: none;
+  color: #80FF80;
+  font-family: inherit;
+}
+
+a:hover,
+form input:hover {
+  text-decoration: none;
+  color: #BFFFBF;
+}
+
+a.left:hover:after {
+  content: "<";
+}
+
+a.right:hover:before {
+  content: ">";
+}
+
+a:active,
+form input:active {
+  text-decoration: none;
+  color: #80FF80;
+}
+
+form input {
+  background: none !important;
+  border: none; 
+  padding: 0 !important;
+  margin: 0;
+}
+
+div.pane-50 {
+  width: 50%;
+  float: left;
+}
+
+div.pane > * {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+div.pane.left,
+div.pane.right {
+  margin-top: 100px;
+}
+
+div.pane.right p {
+  max-width: 18em;
+}
+
+div.left {
+  text-align: right;
+}
+
+div#header p {
+  margin: 1em;
+  font-size: 0.8em;
+}
+
+div#header .title {
+  float: left;
+}
+
+div#header .copyright {
+  float: right;
+}
+
+div.placeholder {
+  margin: 1em;
+  clear: both;
+}
+
+div#matrix-id {
+  display: none;
+}
+
+div#matrix {
+  margin: 1em;
+  clear: both;
+}
+
+div#matrix table {
+  float: left;
+}
+
+div#matrix table th {
+  color: #BFFFBF;
+}
+
+div#matrix table tr.tail {
+  color: #FFFFFF;
+}

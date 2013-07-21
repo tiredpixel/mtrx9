@@ -1,16 +1,16 @@
 (ns mtrx9.core
-  (:use compojure.core)
+  (:use [compojure.core :only (defroutes)]
+        [aleph.http :only (start-http-server wrap-ring-handler)])
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
-            [ring.adapter.jetty :as jetty]))
+            [mtrx9.controllers.statics :as statics]
+            [mtrx9.controllers.matrices :as matrices]))
 
 (defroutes app-routes
-  (GET "/" [] "MTRX9")
-  (route/resources "/")
-  (route/not-found "Not Found"))
-
-(def app
-  (handler/site app-routes))
+  statics/routes
+  matrices/routes
+  (route/resources "/"))
 
 (defn -main [port]
-  (jetty/run-jetty app {:port (Integer. port) :join? false}))
+  (start-http-server (wrap-ring-handler (handler/api app-routes))
+    {:port (Integer. port) :websocket true}))
