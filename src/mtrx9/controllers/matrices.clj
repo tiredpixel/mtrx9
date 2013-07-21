@@ -13,12 +13,9 @@
 (defn- rand-matrix-id []
   (clojure.string/join (repeatedly id-length #(rand-nth id-chars))))
 
-(defn websocket-init [channel]
-  (receive-all channel #(println "C:" %)))
-
 (defn websocket-handler [channel request]
   (let [matrix-id (get-in request [:route-params :id])
-        matrix-channel (named-channel matrix-id websocket-init)]
+        matrix-channel (named-channel matrix-id nil)]
     (siphon matrix-channel channel)))
 
 (defn show [id]
@@ -29,7 +26,7 @@
 
 (defn update [id chars]
   (println "U:" id chars)
-  (enqueue (named-channel id websocket-init) (encode-json->string {:chars chars}))
+  (enqueue (named-channel id nil) (encode-json->string {:chars chars}))
   {:status 204})
 
 (defroutes routes
