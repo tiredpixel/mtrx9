@@ -19,8 +19,7 @@
 (defn websocket-handler [channel request]
   (let [matrix-id (get-in request [:route-params :id])
         matrix-channel (named-channel matrix-id websocket-init)]
-    (siphon matrix-channel channel)
-    (siphon channel matrix-channel)))
+    (siphon matrix-channel channel)))
 
 (defn show [id]
   (view/show id))
