@@ -4,6 +4,10 @@ html, body {
   color: #00FF00;
 }
 
+.clear {
+  clear: both;
+}
+
 h1 {
   font-size: 1.5em;
   line-height: 1em;
@@ -13,7 +17,8 @@ h1 {
 
 p,
 li,
-form input {
+form input,
+table {
   font-size: 1.5em;
   line-height: 1em;
 }
@@ -26,7 +31,8 @@ form {
 h1,
 p,
 li,
-form input {
+form input,
+table {
   letter-spacing: .4em;
 }
 
@@ -75,10 +81,6 @@ form input {
   margin: 0;
 }
 
-div.container#header {
-  height: 100px;
-}
-
 div.pane-50 {
   width: 50%;
   float: left;
@@ -89,6 +91,11 @@ div.pane > * {
   padding-right: .5em;
 }
 
+div.pane.left,
+div.pane.right {
+  margin-top: 100px;
+}
+
 div.pane.right p {
   max-width: 18em;
 }
@@ -97,5 +104,26 @@ div.left {
   text-align: right;
 }
 
-div.right {
+div.placeholder {
+  margin: 1em;
+}
+
+div#matrix-id {
+  display: none;
+}
+
+div#matrix {
+  margin: 1em;
+}
+
+div#matrix table {
+  float: left;
+}
+
+div#matrix table th {
+  color: #BFFFBF;
+}
+
+div#matrix table tr.tail {
+  color: #FFFFFF;
 }
