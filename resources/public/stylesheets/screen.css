@@ -118,5 +118,9 @@ div#matrix table {
 }
 
 div#matrix table th {
+  color: #BFFFBF;
+}
+
+div#matrix table tr.tail {
   color: #FFFFFF;
 }

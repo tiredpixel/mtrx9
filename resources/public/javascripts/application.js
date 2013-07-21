@@ -5,8 +5,7 @@ $(document).ready(function () {
     socket;
   
   matrixSettings = {
-    id    : $('#matrix-id').text(),
-    decay : 60000
+    id : $('#matrix-id').text()
   };
   
   $('h1, p, li, form input, table').hide(0, function () {
@@ -44,8 +43,6 @@ $(document).ready(function () {
           } else {
             streamTail.appendTo($('#' + streamId));
           }
-          
-          streamTail.fadeTo(matrixSettings.decay, 0.3);
           
           streamItems = $('#' + streamId + ' tbody tr');
           
