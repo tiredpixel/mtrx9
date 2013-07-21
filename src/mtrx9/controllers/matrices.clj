@@ -3,13 +3,21 @@
   (:require [ring.util.response :as ring]
             [mtrx9.views.matrices :as view]))
 
+(def id-chars  "0123456789SLATF-")
+(def id-length 42)
+(def id-re     (re-pattern (str "[" id-chars "]{" id-length "}")))
+
+(defn- rand-matrix-id []
+  (clojure.string/join (repeatedly id-length #(rand-nth id-chars))))
+
 (defn show [id]
   (view/show id))
 
 (defn create []
-  (ring/redirect (str "/matrices/"
-                      (apply str (repeatedly 42 #(rand-nth "0123456789-SLATF"))))))
+  (ring/redirect (str "/matrices/" (rand-matrix-id))))
 
 (defroutes routes
-  (GET  ["/matrices/:id" :id #"[0-9-SLATF]{42}"] [id] (show id))
-  (POST "/matrices" [] (create)))
+  (GET ["/matrices/:id" :id id-re] [id]
+    (show id))
+  (POST "/matrices" []
+    (create)))
