@@ -11,4 +11,5 @@ you're a tweetling, you might like to follow @mtrx9."
   :plugins [[lein-ring "0.8.5"]]
   :profiles
   {:dev {:dependencies [[ring-mock "0.1.5"]]}}
-  :main mtrx9.core)
+  :main mtrx9.core
+  :aot [mtrx9.core])
