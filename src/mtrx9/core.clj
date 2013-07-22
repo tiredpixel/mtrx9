@@ -4,7 +4,8 @@
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
             [mtrx9.controllers.statics :as statics]
-            [mtrx9.controllers.matrices :as matrices]))
+            [mtrx9.controllers.matrices :as matrices])
+  (:gen-class))
 
 (defroutes app-routes
   statics/routes

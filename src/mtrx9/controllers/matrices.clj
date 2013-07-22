@@ -4,6 +4,7 @@
         [aleph.http :only (wrap-aleph-handler)]
         [aleph.formats :only (encode-json->string)])
   (:require [ring.util.response :as ring]
+            [clj-time.core :as time]
             [mtrx9.views.matrices :as view]))
 
 (def id-chars  "0123456789SLATF-")
@@ -25,7 +26,7 @@
   (ring/redirect (str "/matrices/" (rand-matrix-id))))
 
 (defn update [id streams]
-  (println "U:" id streams)
+  (println (str "[" (str (time/now)) "] " id  " <- " streams))
   (enqueue (named-channel id nil) (encode-json->string {:streams streams}))
   {:status 204})
 
