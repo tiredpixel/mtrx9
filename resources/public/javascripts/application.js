@@ -49,7 +49,7 @@ $(document).ready(function () {
           streamChars = $('#' + streamId + ' tbody tr');
           
           if (streamTail[0] === streamChars.last()[0] &&
-              $('#' + streamId).height() > $(window).height()) {
+              $('#' + streamId).height() > ($(window).height() - $('#' + streamId).position().top)) {
             streamChars.first().replaceWith(streamTail);
           } else {
             streamTail.next().remove();
