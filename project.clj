@@ -1,4 +1,4 @@
-(defproject mtrx9 "1.2.0"
+(defproject mtrx9 "1.2.1"
   :description "MTRX9 is a simple matrix monitoring tool which uses the notions of streams, chars, and time."
   :url "http://www.mtrx9.com"
   :min-lein-version "2.0.0"
