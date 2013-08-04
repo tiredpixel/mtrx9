@@ -1,4 +1,4 @@
-(defproject mtrx9 "1.1.0"
+(defproject mtrx9 "1.2.0"
   :description "MTRX9 is a 3-dimensional simple monitoring tool using Clojure and Websockets. The live MTRX9 service is provided by mtrx9.com (http://www.mtrx9.com). If
 you're a tweetling, you might like to follow @mtrx9."
   :url "http://mtrx9.com"
