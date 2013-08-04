@@ -26,7 +26,6 @@
   (ring/redirect (str "/matrices/" (rand-matrix-id))))
 
 (defn update [id streams]
-  (println (str "[" (str (time/now)) "] " id  " <- " streams))
   (enqueue (named-channel id nil) (encode-json->string {:streams streams}))
   {:status 204})
 
