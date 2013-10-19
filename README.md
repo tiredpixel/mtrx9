@@ -55,16 +55,6 @@ If you'd like to discuss what you're doing or planning to do, or if you get stuc
 
 Do whatever makes you happy. We'll probably still like you. :)
 
-Branches are as follows:
-
-- [master](https://github.com/tiredpixel/mtrx9/tree/master)
-  
-  Stable code; run on [mtrx9.com](http://www.mtrx9.com).
-
-- [develop](https://github.com/tiredpixel/mtrx9/tree/develop)
-  
-  Edge code; normally the branch from which to branch.
-
 
 ## Blessing
 
